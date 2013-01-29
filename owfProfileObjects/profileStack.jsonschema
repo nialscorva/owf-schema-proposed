@@ -1,0 +1,33 @@
+{
+	"title":"Stack",
+	"description" : "A stack of dashboards."
+	"additionalProperties": true,
+	"extends" : "profileOwnedEntity",
+	"properties":{
+		"stackDefinition" : {
+			"title" : "Stack Definition",
+			"description" : "Pointer to the original stack.",
+			"type" : "string",
+			"format" : "guid"
+			"required" : true
+		},
+		"profileDashboards": {
+			"title" : "Profile Dashboards",
+			"description" : "Profile Dashboards contained within this stack",
+			"type":"array",
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"title" : "Profile Dashboard GUID",
+						"description" : "ID of the contained stack.",
+					},
+					"name" : {
+						"title" : "Display Name",
+						"description" : "Display name for the stack.",
+					}
+				}
+			}
+		},
+
+	}
+}

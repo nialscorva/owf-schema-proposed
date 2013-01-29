@@ -1,0 +1,22 @@
+{
+	"title":"Profile Dashboard",
+	"description" : "Relationship between profile and a dashboard."
+	"additionalProperties": true,
+	"extends" : "profileOwnedEntity",
+	"properties":{
+		"dashboardDefinition" : {
+			"title" : "Dashboard Definition",
+			"description" : "Pointer to the original dashboard.",
+			"type" : "string",
+			"format" : "guid"
+			"required" : true
+		},
+		"rootProfilePane" : {
+			"title" : "Root Pane",
+			"description" : "Pointer to the ProfilePane that is the root of the layout.",
+			"type" : "string",
+			"format" : "guid"
+			"required" : true
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"title":"Person",
+	"description": "A human user of the system.",
+	"additionalProperties": true,
+	"extends" : "profile",
+	"properties":{
+		"userId" : {
+			"title" :"User Id",
+			"description":"The login name associated with the auth system",
+			"type":"string",
+			"required":true
+		},
+		"authorizationInformation" : {
+			"title" :"Authorization Information",
+			"description":"Any additional information that the authorization system needs to store about the user.",
+			"type":"any",
+			"required":false
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"title":"Preferences",
+	"description":"This object can have preferences attached to it.",
+	"additionalProperties": true,
+	"properties":{
+		"preferences": {
+				"title" :"Preferences",
+				"description":"Preferences on this object.",
+				"type":"any",
+				"required":true
+		}
+}

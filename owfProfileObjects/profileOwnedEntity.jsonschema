@@ -1,0 +1,16 @@
+{
+	"title":"Owned Entity",
+	"description" : "An object that is directly owned by a profile.",
+	"additionalProperties": true,
+	"extends" : ["owfEntity"],
+	"properties":{
+		"owner": {
+			"title" :"Owner",
+			"description":"Points to the owner of this object.",
+			"type":"string",
+			"format":"profile",
+			"readonly" : true,
+			"required":true
+		}
+	}
+}

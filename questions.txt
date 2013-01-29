@@ -1,0 +1,28 @@
+Profile associated objects-- stacks, dashboards, panes, widgets, widget instances.
+- Need to allow customizations, but are they really different types?  Is a group dashboard any different than a user dashboard?  Seems to be "shared" dashboard that is a template for creating a "user" dashboard, including widget instances to hold the data.  Did the model with the assumption that the "definition" is a template, and "profile*" is always owned by a user (not profile).  
+- Are the owfProfileObjects really full objects, or just the base object with an "isCached" and a hypothetical "isUserOwned" mixin?  Seems that way, but not sure.
+- What's the chain of interactions between profileObjects and objects on "sharing" as opposed to "copying"?
+
+hasPreferences mixin
+- Seems like there should be an override chain.  For example, when queried for "foo", should widgetInstance.preferences chain to widgetDefinition?  Should user chain to profiles that it is a "memberOf"?  If so, what's the resolution strategy.  Maybe just a convenience function.
+
+Trust Circles
+- Assumption is that trust circles are a set with partial ordering function.  Does the graph need to be enumerated (makes it easier for the user to set up) or can it merely be an ordering function (better for large sets such as all possible classifications).  Can the two be merged or combined?
+
+widgetDefinition
+- widgetTypes could be merged with the "runsInBackground" (service widget), "visibleInLauncher" ("invisible") flags?
+- adding "channels" would a nice way to track inter-widget connections.
+
+Needed Mixins
+- hasTrustCircle for things that belong to a trust circle.
+- hasAccessControl to limit visibility to particular profiles
+
+Needed objects
+- preferences, eventing messages, launch parameters, etc should have definitions and common envelope information for security, data type, etc.
+- RPC
+- Metrics (stream, event, data series, etc)
+- State
+- Chrome
+
+
+

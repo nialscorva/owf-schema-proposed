@@ -1,0 +1,26 @@
+{
+	"title":"Stack",
+	"description" : "A stack of dashboards."
+	"additionalProperties": true,
+	"extends" : "owfEntity",
+	"properties":{
+		"dashboards": {
+			"title" : "Dashboards",
+			"description" : "Dashboards contained within this stack",
+			"type":"array",
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"title" : "Dashboard GUID",
+						"description" : "ID of the contained dashboard",
+					},
+					"name" : {
+						"title" : "Display Name",
+						"description" : "Display name for the dashboard",
+					}
+				}
+			}
+		},
+
+	}
+}

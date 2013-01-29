@@ -1,0 +1,102 @@
+{
+	"title":"Listing",
+	"description" : "This object has Marketplace listing data.",
+	"additionalProperties": true,
+	"properties":{
+		"listing" : {
+			"creator": {
+				"description":"The person who created the Listing.",
+				"type":"string",
+				"format":"person",
+				"required":true,
+				"readonly":true
+			},
+			"organization": {
+				"description":"The organization to which the creator of the Listing belongs.",
+				"type":"string",
+				"format":"organization",
+				"required":true
+			},
+			"releaseDate": {
+				"description":"  The release date for the Listing",
+				"type":"string",
+				"format":"date-time",
+				"required":true
+			},
+			"versionName": {
+				"description":"  User-entered version id for the Listing.",
+				"type":"string",
+				"required":true
+			},
+			"isEnabled": {
+				"description":"The Boolean value of whether this Listing is enabled (viewable to a User in Marketplace) or not enabled (not-viewable to all Users in Marketplace).",
+				"type":"string",
+				"format":"",
+				"required":true
+			}
+			"imageLinks" : {
+				"title":"Images",
+				"description" : "Links to informational images about this listing.",
+				"type" : "array",
+				"items" : {
+					"properties" : {
+						"href" : {
+							"title" : "URL",
+							"description":"Link to the image.",
+							"type":"string",
+							"format": "uri",
+							"required":true
+						},
+						"rel" : {
+							"title" : "Relationship",
+							"description":"Relationship of this image to the listing.",
+							"type":"string",
+							"required" : true,
+						}
+						"description" : {
+							"title" : "Description",
+							"description":"A description of the image that can be used if the image is not available.",
+							"type":"string",
+							"required":true,
+							"default" : ""
+						},
+						"caption" : {
+							"title" : "Caption",
+							"description":"A caption to show under the image.",
+							"type":"string",
+							"required":true,
+							"default":""
+						}
+					}
+				}
+			},
+			"ratings" : {
+				"avgRate": {
+					"description":"  Value rating for the Listing based on a 5-star rating. ",
+					"type":"string",
+					"format":"",
+					"required":true
+				},
+				"totalVotes": {
+					"description":"  The total votes for a Listing.",
+					"type":"string",
+					"format":"",
+					"required":true
+				}
+			},
+			"listingReferences": {
+				"title":"Links to other listings",
+				"description" : "Associations to other listings.",
+				"type" : "object",
+				"patternProperties" : {
+					".*" : {
+						"description":"The key describes the relationship (e.g. required, optional).",
+						"type":"array",
+						"required":true,
+						"items" : { "$ref" : "guid-reference" }
+					}
+				}
+			}
+		}
+	}
+}

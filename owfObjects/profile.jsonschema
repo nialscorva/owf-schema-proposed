@@ -1,0 +1,88 @@
+{
+	"title":"Profile",
+	"description": "An entity that can own other entities.",
+	"additionalProperties": true,
+	"extends" : ["owfEntity","hasPreferences"],
+	"properties":{
+		"defaultDashboard" : {
+			"title" :"Default Dashboard",
+			"description":"The dashboard to show if nothing overrides this preference.",
+			"type":"string",
+			"format":"dashboard",
+			"required":false
+		},
+		"memberOf": {
+			"title" :"Member Of",
+			"description":"Other profiles that this profile belongs to.",
+			"type":"array",
+			"required":false,
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"description" : "Reference to the profile this is a member of.",
+						"type" : "string",
+						"format" : "guid"
+					},
+					"role" : {
+						"role" : "Role that this profile has on the owning profile.",
+						"description" : "The role that the containing profile has on the profile it is a member of."
+					}
+				}
+			}
+		},
+		"dashboards": {
+			"title" :"Dashboards",
+			"description":"Dashboards assigned to this profile.",
+			"type":"array",
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"description" : "Reference to the dashboard.",
+						"type" : "string",
+						"format" : "guid"
+					},
+					"role" : {
+						"title" : "Role that this profile has on the dashboard.",
+						"description" : "The role that this profile has on the dashboard."
+					}
+				}
+			}
+		},
+		"stacks": {
+			"title" :"Stacks",
+			"description":"Stacks assigned to this profile.",
+			"type":"array",
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"description" : "Reference to the stack.",
+						"type" : "string",
+						"format" : "guid"
+					},
+					"role" : {
+						"title" : "Role that this profile has on the stack.",
+						"description" : "The role that this profile has on the stack."
+					}
+				}
+			}
+		},
+		"widgets": {
+			"title" :"Widgets",
+			"description":"Widgets assigned to this profile.",
+			"type":"array",
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"description" : "Reference to the widget.",
+						"type" : "string",
+						"format" : "guid"
+					},
+					"role" : {
+						"title" : "Role that this profile has on the widget.",
+						"description" : "The role that this profile has on the widget."
+					}
+				}
+			}
+		}
+	}
+}

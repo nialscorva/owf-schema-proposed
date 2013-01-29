@@ -1,0 +1,47 @@
+{
+	"title":"",
+	"description" : ""
+	"additionalProperties": true,
+	"extends" : ["profileOwnedEntity"],
+	"properties":{
+		"layoutType" : {
+			"title": "Layout Type",
+			"description":"The type of the layout.",
+			"type":"string",
+			"required":true,
+			"enum": ["desktop","accordian","fit","tabbed","portal","horizontalSplit","verticalSplit"]
+		},
+		"paneDefinition" : {
+			"title" : "Pane Definition",
+			"description" : "Pointer to the original Pane.",
+			"type" : "string",
+			"format" : "guid"
+			"required" : true
+		},
+		"components" : {
+			"title": "Components",
+			"description":"Components contained in this pane.",
+			"type":"array",
+			"required":true,
+			"items" : {
+				"extends" : "hasPosition",
+				"properties" : {
+					"guid" : {
+						"title": "GUID",
+						"description":"GUID of the contained object.",
+						"type":"string",
+						"format" : "guid",
+						"required":true
+					},
+					"type" : {
+						"title": "Object Type",
+						"description":"The type of object in the pane.",
+						"type":"string",
+						"required":true,
+						"enum": ["paneInstance","widgetInstance"]
+					}
+				}
+			}
+		}
+	}
+}

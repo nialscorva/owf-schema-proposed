@@ -1,0 +1,76 @@
+{
+	"title":"Widget Definition",
+	"additionalProperties": true,
+	"extends" : ["owfEntity","hasPosition","hasPreferences"],
+	"properties":{
+		"displayName": {
+			"title": "Display Name",
+			"description":"The name that will be shown to users for this widget.",
+			"type":"string",
+			"required":true
+		},
+		"widgetUrl":{
+			"title": "Widget URL",
+			"description":"The location of the widget itself.",
+			"type":"string",
+			"format":"uri",
+			"required":true
+		},
+		"visibleInLauncher":{
+			"title": "Visible in Launcher",
+			"description":"Is the widget visible in the launch menu.",
+			"type":"boolean",
+			"required":true,
+			"default" : true
+		},
+		"isSingleton":{
+			"title": "Singleton?",
+			"description":"Only allow a single instance of the widget.",
+			"type":"boolean",
+			"required":true,
+			"default":false
+		},
+		"runsInBackground":{
+			"title": "Runs in background?",
+			"description":"Is the widget headless and run without a visible iframe?",
+			"type":"boolean",
+			"required":false,
+			"default":false
+		},
+		"recommendedLayouts": {
+			"title": "Recommended Layouts",
+			"description":"Defines layouts which may be associated and/or recommended with the Listing. This is only populated for Types where hasLayouts=true",
+			"type":"array",
+			"uniqueItems" : true,
+			"items": {
+				"enum": ["desktop","accordian","fit","tabbed","portal"]
+			},
+			"required":false
+		},
+		"widgetTypes":{
+			"title" : "",
+			"description":"",
+			"type":"string",
+			"format": null,
+			"required":true
+		},
+		"sendIntents" : {
+			"title" : "Sent Intents",
+			"description":"Intents that this widget will start an activity with.",
+			"type":"array",
+			"required":false,
+			"items" : {
+				"$ref" : "intents"
+			}
+		},
+		"receivedIntents" : {
+			"title" : "Received Intents",
+			"description":"Intents that this widget can act on.",
+			"type":"array",
+			"required":false,
+			"items" : {
+				"$ref" : "intents"
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"title":"Cached Object",
+	"description":"This object is a cached version of the original.",
+	"additionalProperties": true,
+	"properties":{
+		"cachedObject" : {
+			"properties": {
+				"href": {
+						"title" :"Pointer to original object",
+						"description":"Pointer to the original object.",
+						"type":"string",
+						"format":"uri",
+						"required":true
+				},
+				"originalObject": {
+						"title" :"Original Object",
+						"description":"Cached values of the object this is a copy of.",
+						"type":"any",
+						"required":false
+				},
+				"lastUpdate": {
+						"title" :"Last updated",
+						"description":"When this object was last synced to the original.",
+						"type":"string",
+						"format":"date-time",
+						"required":true
+				},
+				"isOverideAllowed": {
+						"title" :"Overriding Values Allowed?",
+						"description":"Can the cached version modify fields from the original object?",
+						"type":"boolean",
+						"required":true
+				},
+				"updateSchedule": {
+						"title" :"Update Schedule",
+						"description":"The cron expression for syncing this object, empty for no automatic updates.",
+						"type":"string",
+						"format":"cron",
+						"required":false
+				},
+				"modifiedFields": {
+						"title" :"Modified Fields",
+						"description":"List of fields that have been modified.  When updating, these will not be overwritten from the original.",
+						"type":"array",
+						"items": {
+							"description": "Dot-notated path to the field that should be preserved.",
+							"type":"string"
+						},
+						"required":false
+				},
+			}
+		}
+	}
+}

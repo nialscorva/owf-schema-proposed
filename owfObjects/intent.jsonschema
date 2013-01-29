@@ -1,0 +1,19 @@
+{
+	"title":"Intent",
+	"additionalProperties": true,
+	"properties":{
+		"action":{
+			"title" : "Action Verb",
+			"description":"The action expressed by the intent (e.g. view, install).",
+			"type":"string",
+			"format" : null,
+			"required":true
+		},
+		"dataType":{
+			"title" : "Data Type",
+			"description":"The type of data being affected by the action.",
+			"type":"string",
+			"format" : null,
+			"required":true
+		}
+}

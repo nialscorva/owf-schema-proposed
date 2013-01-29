@@ -1,0 +1,41 @@
+{
+	"title":"OWF Entity",
+	"additionalProperties": true,
+	"properties":{
+		"id":{
+			"title" : "GUID",
+			"description":"Globally unique identifier.",
+			"type":"string",
+			"format" : "guid",
+			"readonly" : true,
+			"required":true
+		},
+		"title": {
+			"title" :"Name",
+			"description":"The name of this item.",
+			"type":"string",
+			"required":true
+		},
+		"description": {
+			"title" : "Description",
+			"description": "A description that tells the user about this listing.",
+			"type":"string",
+			"format":"textArea",
+			"required":true
+		},
+		"smallIcon": {
+			"title" : "Small Icon URL",
+			"description": "A small icon optimized for display at 32x32px.",
+			"type":"string",
+			"format":"imageUri",
+			"required":false
+		},
+		"largeIcon": {
+			"title" : "Small Icon URL",
+			"description": "A small icon optimized for display at 256x256px.",
+			"type":"string",
+			"format":"imageUri",
+			"required":false
+		},
+	}
+}

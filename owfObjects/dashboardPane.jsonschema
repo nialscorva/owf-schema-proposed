@@ -1,0 +1,45 @@
+{
+	"title":"",
+	"description" : ""
+	"additionalProperties": true,
+	"extends" : "owfEntity",
+	"properties":{
+		"layoutType" : {
+			"title": "Layout Type",
+			"description":"The type of the layout.",
+			"type":"string",
+			"required":true,
+			"enum": ["desktop","accordian","fit","tabbed","portal","horizontalSplit","verticalSplit"]
+		},
+		"components" : {
+			"title": "Components",
+			"description":"Components contained in this dashboard.",
+			"type":"array",
+			"required":true,
+			"items" : {
+				"properties" : {
+					"guid" : {
+						"title": "GUID",
+						"description":"GUID of the contained object.",
+						"type":"string",
+						"format" : "guid",
+						"required":true
+					},
+					"type" : {
+						"title": "Object Type",
+						"description":"The type of object in the pane.",
+						"type":"string",
+						"required":true,
+						"enum": ["pane","widget","widgetInstance"]
+					},
+					"layoutInformation" : {
+						"title": "Layout Informat",
+						"description":"Information specific to the layout type on where to draw this object.",
+						"type":"any",
+						"required":true,
+					}					
+				}
+			}
+		}
+	}
+}

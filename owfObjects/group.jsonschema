@@ -1,0 +1,20 @@
+{
+	"title":"Group",
+	"description": "A collection of principals.",
+	"additionalProperties": true,
+	"extends" : "profile",
+	"properties":{
+		"authorizationInformation" : {
+			"title" :"Authorization Information",
+			"description":"Any additional information that the authorization system needs to store about the group (e.g. the ldap name it is bound to).",
+			"type":"any",
+			"required":false
+		},
+		"groupType" : {
+			"title" : "Group Type",
+			"description":"The type of group. E.g. automatic, user-controlled, ldap, etc.",
+			"type":"string",
+			"required":false
+		}
+	}
+}

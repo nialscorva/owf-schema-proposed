@@ -1,0 +1,13 @@
+{
+	"title":"Position",
+	"description":"This object can have position data for display.",
+	"additionalProperties": true,
+	"properties":{
+		"position": {
+				"title" :"Position Data",
+				"description":"Information about where to position this item.  Need to work out the structure, but probably of the form {'layout' : arbitraryLayoutData }.",
+				"type":"any",
+				"required":true
+		}
+	}
+}

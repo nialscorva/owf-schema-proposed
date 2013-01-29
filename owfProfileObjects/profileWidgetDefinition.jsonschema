@@ -1,0 +1,21 @@
+{
+	"title":"Person Widget",
+	"description":"A relationship between a person and a widget.",
+	"additionalProperties": true,
+	"extends" :["profileOwnedEntity","hasPreferences","hasTags","hasPosition"],
+	"properties":{
+		"widgetDefinition": {
+			"title" :"Widget Definition",
+			"description":"Points to the widget that this defines.",
+			"type":"string",
+			"format":"guid",
+			"readonly" : true,
+			"required":true
+		},
+		"lastPositioning": {
+			"title" :"Widget Definition",
+			"description":"Points to the widget that this defines. TODO: better layout of info.",
+			"type":"any"
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"title":"Activity",
+	"additionalProperties": true,
+	"extends" : "intent",
+	"properties":{
+		"data":{
+			"title" : "Data",
+			"description":"The type of data being affected by the activity.",
+			"type":"string",
+			"format" : null,
+			"required":true
+		},
+		"trustCircle" : {
+			"title" : "Trust Circle",
+			"description":"The circle of trust that is allowed to receive this intent.",
+			"type":"string",
+			"format" : null,
+			"required":true
+		}
+}

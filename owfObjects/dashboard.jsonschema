@@ -1,0 +1,15 @@
+{
+	"title":"Dashboard",
+	"description" : "A layout of panes."
+	"additionalProperties": true,
+	"extends" : "owfEntity",
+	"properties":{
+		"rootPane" : {
+			"title" : "Root Pane",
+			"description" : "",
+			"type" : "string",
+			"format" : "guid"
+			"required" : true
+		}
+	}
+}

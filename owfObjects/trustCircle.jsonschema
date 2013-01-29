@@ -1,0 +1,19 @@
+{
+	"title":"Trust Circle",
+	"additionalProperties": true,
+	"extends" : "owfEntity",
+	"properties":{
+		"includedCircles": {
+			"title" : "Links to other circles that are subsets of this one.",
+			"description":"A fuller description of this circle of trust.",
+			"type":"array",
+			"items" : {
+				"title" : "Circle of Trust URL",
+				"description":"A link to the circle of trust.",
+				"type":"string",
+				"format" : "guid",
+				"required":true
+			}
+		}
+	}
+}

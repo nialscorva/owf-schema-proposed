@@ -1,0 +1,16 @@
+{
+	"title":"Tags",
+	"description":"This object has tags attached to it.",
+	"additionalProperties": true,
+	"properties":{
+		"tags": {
+				"title" :"Tags",
+				"description":"Tags associated with this object.",
+				"type":"array",
+				"required":true,
+				"items" : {
+					"type":"string",
+					"format" : "tag"
+				}
+		}
+}
